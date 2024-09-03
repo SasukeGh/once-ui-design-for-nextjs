@@ -57,11 +57,11 @@ export default function Home() {
 									width: 'fit-content',
 									padding: 'var(--static-space-8) var(--static-space-16)',
 									backdropFilter: 'blur(var(--static-space-1))'}}>
-								Start by editing <span className="brand-on-background-medium">app/page.tsx</span>
+								Welcome to the official website of<span className="brand-on-background-medium">SasukTech</span>
 							</InlineCode>
 							<Heading
 								variant="display-strong-s">
-								Sasuke Uchiha.<br/> Web developer.<br/>Game Developer.<br/>Contact me for any projects at a fee
+								Sasuke Uchiha.<br/>Web developer.<br/> <br/>Contact me for any projects at a fee
 							</Heading>
 							<Button
 								href="https://conectarorder.vercel.app"
