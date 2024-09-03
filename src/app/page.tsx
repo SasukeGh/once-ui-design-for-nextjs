@@ -1,10 +1,9 @@
 "use client";
-
+import Analytics from '@vercel/analytics';
 import React from 'react';
 
 import { Heading, Text, Flex, Button, Grid, InlineCode, Icon, Logo, Background } from '@/once-ui/components';
 import Link from 'next/link';
-import Analytics from '@vercel/analytics';
 
 export default function Home() {
 	const links = [
