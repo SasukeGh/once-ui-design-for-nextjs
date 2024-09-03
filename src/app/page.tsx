@@ -125,7 +125,7 @@ export default function Home() {
 					</Button>
 					<Button
 						href="https://whatsapp.com/channel/0029Va8aNxzJENy5Obt7Tz0t"
-						prefixIcon="whatsapp" size="s" variant="tertiary">
+						prefixIcon="discord" size="s" variant="tertiary">
 						Whatsapp Channel
 					</Button>
 				</Flex>
