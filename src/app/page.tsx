@@ -9,9 +9,9 @@ import Link from 'next/link';
 export default function Home() {
 	const links = [
 		{
-			href: "https://whatsapp.com/channel/0029Va8aNxzJENy5Obt7Tz0t",
+			href: "https://whatsapp.com/channel/0029Vao8ooQAu3aPuPGyLF25",
 			title: "My WhatsApp Channel",
-			description: "Join ChillHub, my channel for fun, memes, anime, and tech",
+			description: "Join SasuleTech, my channel forTech, memes, and anime.",
 		},
 		{
 			href: "https://wa.me/233257789272/?text=Hi,+there+Sasuke+Uchiha",
@@ -127,7 +127,7 @@ export default function Home() {
 							GitHub
 						</Button>
 						<Button
-							href="https://whatsapp.com/channel/0029Va8aNxzJENy5Obt7Tz0t"
+							href=" https://whatsapp.com/channel/0029Vao8ooQAu3aPuPGyLF25"
 							prefixIcon="discord" size="s" variant="tertiary">
 							Whatsapp Channel
 						</Button>
