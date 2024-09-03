@@ -8,19 +8,19 @@ import Link from 'next/link';
 export default function Home() {
 	const links = [
 		{
-			href: "https://once-ui.com/docs/theming",
-			title: "Themes",
-			description: "Style your app in minutes.",
+			href: "https://whatsapp.com/channel/0029Va8aNxzJENy5Obt7Tz0t",
+			title: "My WhatsApp Channel",
+			description: "Join ChillHub,my channel for fun,memes,anime,and tech",
 		},
 		{
-			href: "https://once-ui.com/docs/flexComponent",
-			title: "Layout",
-			description: "Build responsive layouts.",
+			href: "https://wa.me/233257789272/?text=Hi,+there+Sasuke+Uchiha",
+			title: "My WhatsApp Number",
+			description: "Contact me here.",
 		},
 		{
-			href: "https://once-ui.com/docs/typography",
-			title: "Typography",
-			description: "Scale text automatically.",
+			href: "mailto:doktakobby@gmail.com",
+			title: "My email",
+			description: "For professional inquiries.",
 		},
 	];
 
@@ -61,13 +61,13 @@ export default function Home() {
 							</InlineCode>
 							<Heading
 								variant="display-strong-s">
-								Comprehensive.<br/> Responsive.<br/>Accessible.
+								Sasuke Uchiha.<br/> Web developer.<br/>Game Developer.
 							</Heading>
 							<Button
-								href="https://once-ui.com/docs"
+								href="https://conectarorder.vercel.app"
 								suffixIcon="chevronRight"
 								variant="secondary">
-								Read docs
+								My First Main Project
 							</Button>
 						</Flex>
 					</Flex>
@@ -114,19 +114,19 @@ export default function Home() {
 				justifyContent="space-between">
 				<Text
 					variant="body-default-s" onBackground="neutral-weak">
-					© 2024 Once UI, <Link href="https://github.com/once-ui-system/nextjs-starter?tab=MIT-1-ov-file">MIT License</Link>
+					© 2024 SasukeTech, <Link href="https://github.com/SasukeGh/">MIT License</Link>
 				</Text>
 				<Flex
 					gap="12">
 					<Button
-						href="https://github.com/once-ui-system/nextjs-starter"
+						href="https://github.com/SasukeGh"
 						prefixIcon="github" size="s" variant="tertiary">
 						GitHub
 					</Button>
 					<Button
-						href="https://discord.com/invite/5EyAQ4eNdS"
+						href="https://whatsapp.com/channel/0029Va8aNxzJENy5Obt7Tz0t"
 						prefixIcon="discord" size="s" variant="tertiary">
-						Discord
+						Whatsapp Channel
 					</Button>
 				</Flex>
 			</Flex>
