@@ -4,6 +4,7 @@ import React from 'react';
 
 import { Heading, Text, Flex, Button, Grid, InlineCode, Icon, Logo, Background } from '@/once-ui/components';
 import Link from 'next/link';
+import Analytics from '@vercel/analytics';
 
 export default function Home() {
 	const links = [
@@ -25,6 +26,7 @@ export default function Home() {
 	];
 
 	return (
+		<Analytics>
 		<Flex
 			fillWidth paddingTop="l" paddingX="l"
 			direction="column" alignItems="center" flex={1}>
@@ -131,5 +133,6 @@ export default function Home() {
 				</Flex>
 			</Flex>
 		</Flex>
+    </Analytics>
 	);
 }
