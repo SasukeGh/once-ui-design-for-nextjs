@@ -61,7 +61,7 @@ export default function Home() {
 							</InlineCode>
 							<Heading
 								variant="display-strong-s">
-								Sasuke Uchiha.<br/> Web developer.<br/>Game Developer.
+								Sasuke Uchiha.<br/> Web developer.<br/>Game Developer.<br/>Contact me for any projects at a fee
 							</Heading>
 							<Button
 								href="https://conectarorder.vercel.app"
@@ -114,7 +114,7 @@ export default function Home() {
 				justifyContent="space-between">
 				<Text
 					variant="body-default-s" onBackground="neutral-weak">
-					© 2024 SasukeTech, <Link href="https://github.com/SasukeGh/">MIT License</Link>
+					© 2024 SasukeTech, <Link href=" https://raw.githubusercontent.com/SasukeGh/once-ui-design-for-nextjs/main/LICENSE?token=GHSAT0AAAAAACWGN46IT2W2G2F7DGWDK2LQZWW2Q6Q">MIT License</Link>
 				</Text>
 				<Flex
 					gap="12">
