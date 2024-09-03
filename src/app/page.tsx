@@ -57,7 +57,7 @@ export default function Home() {
 									width: 'fit-content',
 									padding: 'var(--static-space-8) var(--static-space-16)',
 									backdropFilter: 'blur(var(--static-space-1))'}}>
-								Welcome to the official website of<span className="brand-on-background-medium">SasukTech</span>
+								Welcome to the official website of<span className="brand-on-background-medium"> SasukeTech</span>
 							</InlineCode>
 							<Heading
 								variant="display-strong-s">
@@ -125,7 +125,7 @@ export default function Home() {
 					</Button>
 					<Button
 						href="https://whatsapp.com/channel/0029Va8aNxzJENy5Obt7Tz0t"
-						prefixIcon="discord" size="s" variant="tertiary">
+						prefixIcon="whatsapp" size="s" variant="tertiary">
 						Whatsapp Channel
 					</Button>
 				</Flex>
