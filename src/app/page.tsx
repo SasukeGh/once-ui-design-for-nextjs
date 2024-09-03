@@ -25,7 +25,6 @@ export default function Home() {
 	];
 
 	return (
-		<Analytics>
 		<Flex
 			fillWidth paddingTop="l" paddingX="l"
 			direction="column" alignItems="center" flex={1}>
