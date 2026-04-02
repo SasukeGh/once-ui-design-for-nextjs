@@ -9,18 +9,18 @@ import Link from 'next/link';
 export default function Home() {
 	const links = [
 		{
-			href: "https://whatsapp.com/channel/0029Vao8ooQAu3aPuPGyLF25",
-			title: "My WhatsApp Channel",
-			description: "Join SasuleTech, my channel forTech, memes, and anime.",
+			href: "https://wa.me/233257789272/?text=Hi",
+			title: "WhatsApp",
+			description: "Chat me up.",
 		},
 		{
-			href: "https://wa.me/233257789272/?text=Hi,+there+Sasuke+Uchiha",
-			title: "My WhatsApp Number",
+			href: "https://www.linkedin.com/in/kwabena-osei-nketiah-583b07372",
+			title: "LinkedIn",
 			description: "Contact me here.",
 		},
 		{
 			href: "mailto:doktakobby@gmail.com",
-			title: "My email",
+			title: "Email",
 			description: "For professional inquiries.",
 		},
 	];
@@ -60,14 +60,14 @@ export default function Home() {
 										padding: 'var(--static-space-8) var(--static-space-16)',
 										backdropFilter: 'blur(var(--static-space-1))'
 									}}>
-									Welcome to the official website of<span className="brand-on-background-medium"> SasukeTech</span>
+									Welcome to the official website of<span className="brand-on-background-medium">Kwabena</span>
 								</InlineCode>
 								<Heading
 									variant="display-strong-s">
-									Sasuke Uchiha.<br />Web developer.<br /><br />Contact me for any projects at a fee
+									Kwabena Osei-Nketiah.<br />Web and mobile developer.<br /><br />Contact me for any projects.
 								</Heading>
-								<Button
-									href="https://conectarorder.vercel.app"
+								<Button 
+									href="https://conectar-v2.vercel.app"
 									suffixIcon="chevronRight"
 									variant="secondary">
 									My First Main Project
@@ -117,7 +117,7 @@ export default function Home() {
 					justifyContent="space-between">
 					<Text
 						variant="body-default-s" onBackground="neutral-weak">
-						© 2024 SasukeTech, <Link href=" https://raw.githubusercontent.com/SasukeGh/once-ui-design-for-nextjs/main/LICENSE?token=GHSAT0AAAAAACWGN46IT2W2G2F7DGWDK2LQZWW2Q6Q">MIT License</Link>
+						© 2026 KON, <Link href=" https://raw.githubusercontent.com/SasukeGh/once-ui-design-for-nextjs/main/LICENSE?token=GHSAT0AAAAAACWGN46IT2W2G2F7DGWDK2LQZWW2Q6Q">MIT License</Link>
 					</Text>
 					<Flex
 						gap="12">
@@ -127,9 +127,9 @@ export default function Home() {
 							GitHub
 						</Button>
 						<Button
-							href=" https://whatsapp.com/channel/0029Vao8ooQAu3aPuPGyLF25"
+							href="https://snapchat.com/tybw.kon"
 							prefixIcon="discord" size="s" variant="tertiary">
-							Whatsapp Channel
+							Snapchat
 						</Button>
 					</Flex>
 				</Flex>
