@@ -60,7 +60,7 @@ export default function Home() {
 										padding: 'var(--static-space-8) var(--static-space-16)',
 										backdropFilter: 'blur(var(--static-space-1))'
 									}}>
-									Welcome to the official website of<span className="brand-on-background-medium">Kwabena</span>
+									Welcome to the official website of<span className="brand-on-background-medium"> Kwabena</span>
 								</InlineCode>
 								<Heading
 									variant="display-strong-s">
@@ -127,7 +127,7 @@ export default function Home() {
 							GitHub
 						</Button>
 						<Button
-							href="https://snapchat.com/tybw.kon"
+							href="https://snapchat.com/add/tybw.kon"
 							prefixIcon="discord" size="s" variant="tertiary">
 							Snapchat
 						</Button>
