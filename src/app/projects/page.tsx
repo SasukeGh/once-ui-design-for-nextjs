@@ -71,7 +71,7 @@ export default function Projects() {
 												padding: 'var(--responsive-space-l)' 
 											}}
 											href=""
-											onClick={(e) => e.preventDefault()}> {/* Does nothing */}
+											onClick={(e: React.MouseEvent) => e.preventDefault()}
 											<Flex direction="column" gap="8">
 												<Text variant="body-strong-m" onBackground="neutral-strong">
 													{link.title}
