@@ -26,54 +26,6 @@ export default function Home() {
 	];
 
 	return (
-		<React.Fragment>
-			<Flex
-				fillWidth paddingTop="l" paddingX="l"
-				direction="column" alignItems="center" flex={1}>
-				<Background
-					dots={false} />
-				<Flex
-					position="relative"
-					as="section" overflow="hidden"
-					fillWidth minHeight="0" maxWidth={64}
-					direction="column" alignItems="center" flex={1}>
-					<Flex
-						as="main"
-						direction="column" justifyContent="center"
-						fillWidth fillHeight padding="l" gap="l">
-						<Flex
-							mobileDirection="column"
-							fillWidth gap="24">
-							<Flex
-								position="relative"
-								fillWidth paddingTop="56" paddingX="xl">
-								<Logo size="xl" icon={false} style={{ zIndex: '1' }} />
-							</Flex>
-							<Flex
-								position="relative"
-								fillWidth gap="24" marginBottom="104"
-								direction="column">
-								<InlineCode
-									className="shadow-m"
-									style={{
-										width: 'fit-content',
-										padding: 'var(--static-space-8) var(--static-space-16)',
-										backdropFilter: 'blur(var(--static-space-1))'
-									}}>
-									Welcome to the official website of<span className="brand-on-background-medium"> Kwabena</span>
-								</InlineCode>
-								<Heading
-									variant="display-strong-s">
-									Kwabena Osei-Nketiah.<br />Web and mobile developer.<br /><br />Contact me for any projects.
-								</Heading>
-								<Button 
-									href="https://conectar-v2.vercel.app"
-									suffixIcon="chevronRight"
-									variant="secondary">
-									My First Main Project
-								</Button>
-							</Flex>
-						</Flex>
 						<Grid
 							radius="l"
 							border="neutral-medium"
