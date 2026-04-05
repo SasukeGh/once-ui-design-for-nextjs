@@ -8,17 +8,17 @@ import Link from 'next/link';
 export default function Home() {
 	const links = [
 		{
-			href: "https://wa.me/233257789272/?text=Hi",
-			title: "WhatsApp",
-			description: "Chat me up.",
+			href: "https://conectar-v2.vercel.app",
+			title: "COnectar Restaurant",
+			description: "Restaurant site.",
 		},
 		{
-			href: "https://www.linkedin.com/in/kwabena-osei-nketiah-583b07372",
-			title: "LinkedIn",
-			description: "Contact me here.",
+			href: "https://github.com/NatsukiSubaruGh/anirip",
+			title: "Anirip",
+			description: "Anime downloading app for PC.",
 		},
 		{
-			href: "mailto:doktakobby@gmail.com",
+			href: "javascript:void(0)",
 			title: "Email",
 			description: "For professional inquiries.",
 		},
@@ -36,7 +36,7 @@ export default function Home() {
 				gap="xl">
 				
 				<Flex direction="column" gap="m">
-					<Heading variant="display-strong-s">Contact & Links</Heading>
+					<Heading variant="display-strong-s">Projects</Heading>
 					<Grid
 						radius="l"
 						border="neutral-medium"
@@ -87,9 +87,9 @@ export default function Home() {
 					</Text>
 					<Flex gap="12">
 						<Button
-							href="/projects"
+							href="/"
 							prefixIcon="grid" size="s" variant="secondary">
-							Projects
+							Go Home
 						</Button>
 						<Button
 							href="https://github.com/SasukeGh"
