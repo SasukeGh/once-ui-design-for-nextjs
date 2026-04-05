@@ -5,7 +5,7 @@ import React from 'react';
 import { Heading, Text, Flex, Button, Grid, Icon, Background } from '@/once-ui/components';
 import Link from 'next/link';
 
-export default function Home() {
+export default function Projects() {
 	const links = [
 		{
 			href: "https://conectar-v2.vercel.app",
@@ -18,26 +18,36 @@ export default function Home() {
 			description: "Anime downloading app for PC.",
 		},
 		{
-			href: "javascript:void(0)",
+			href: "mailto:doktakobby@gmail.com", // Changed to mailto for functional email
 			title: "Email",
 			description: "For professional inquiries.",
 		},
 	];
 
 	return (
-		<Background gradient fillWidth>
-			<Flex fillWidth direction="column" alignItems="center" minHeight="100vh">
-				{/* Main Content Wrapper */}
-				<Flex 
-					fillWidth 
-					maxWidth={64} 
-					direction="column" 
-					paddingX="l" 
-					paddingY="xl" 
-					gap="xl">
+		<React.Fragment>
+			<Flex
+				fillWidth paddingTop="l" paddingX="l"
+				direction="column" alignItems="center" flex={1} minHeight="100vh">
+				
+				{/* The Background component with original settings */}
+				<Background
+					dots={false}
+					gradient={true} />
+
+				<Flex
+					position="relative"
+					as="section" overflow="hidden"
+					fillWidth maxWidth={64}
+					direction="column" alignItems="center" flex={1}>
 					
-					<Flex direction="column" gap="m">
+					<Flex
+						as="main"
+						direction="column" justifyContent="center"
+						fillWidth fillHeight padding="l" gap="l">
+						
 						<Heading variant="display-strong-s">Projects</Heading>
+						
 						<Grid
 							radius="l"
 							border="neutral-medium"
@@ -48,11 +58,12 @@ export default function Home() {
 							fillWidth>
 							{links.map((link) => {
 								const isEmail = link.title === "Email";
-								const content = (
+								
+								/* Common inner content for both Link and regular Flex */
+								const innerContent = (
 									<Flex
-										fillWidth paddingY="8" gap="8"
-										direction="column"
-										style={{ padding: 'var(--responsive-space-l)' }}>
+										fillWidth padding="l" gap="8"
+										direction="column">
 										<Flex
 											fillWidth gap="12"
 											alignItems="center">
@@ -70,50 +81,50 @@ export default function Home() {
 								);
 
 								return isEmail ? (
-									<Flex key={link.title} fillWidth border="neutral-medium">
-										{content}
+									/* Email as a regular non-link Button/Card */
+									<Flex key={link.title} fillWidth>
+										{innerContent}
 									</Flex>
 								) : (
+									/* Regular Links */
 									<Link
 										target="_blank"
 										key={link.href}
 										href={link.href}>
-										{content}
+										{innerContent}
 									</Link>
 								);
 							})}
 						</Grid>
 					</Flex>
+				</Flex>
 
-					{/* Footer Section */}
-					<Flex
-						as="footer"
-						position="relative"
-						fillWidth 
-						paddingY="m"
-						justifyContent="space-between"
-						alignItems="center"
-						marginTop="auto">
-						<Text
-							variant="body-default-s" onBackground="neutral-weak">
-							© 2026 KON, <Link href="https://github.com/SasukeGh">MIT License</Link>
-						</Text>
-						<Flex gap="12">
-							<Button
-								href="/"
-								prefixIcon="home" size="s" variant="secondary">
-								Go Home
-							</Button>
-							<Button
-								href="https://github.com/SasukeGh"
-								prefixIcon="github" size="s" variant="tertiary">
-								GitHub
-							</Button>
-						</Flex>
+				{/* Footer */}
+				<Flex
+					as="footer"
+					position="relative"
+					fillWidth paddingX="l" paddingY="m"
+					justifyContent="space-between"
+					marginTop="auto">
+					<Text
+						variant="body-default-s" onBackground="neutral-weak">
+						© 2026 KON, <Link href="https://github.com/SasukeGh">MIT License</Link>
+					</Text>
+					<Flex gap="12">
+						<Button
+							href="/"
+							prefixIcon="home" size="s" variant="secondary">
+							Go Home
+						</Button>
+						<Button
+							href="https://github.com/SasukeGh"
+							prefixIcon="github" size="s" variant="tertiary">
+							GitHub
+						</Button>
 					</Flex>
 				</Flex>
-				<Analytics />
 			</Flex>
-		</Background>
+			<Analytics />
+		</React.Fragment>
 	);
 }
