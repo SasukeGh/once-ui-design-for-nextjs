@@ -1,9 +1,8 @@
 "use client";
 
-import { Analytics } from '@vercel/analytics/react'; // Updated import statement
+import { Analytics } from '@vercel/analytics/react';
 import React from 'react';
-
-import { Heading, Text, Flex, Button, Grid, InlineCode, Icon, Logo, Background } from '@/once-ui/components';
+import { Heading, Text, Flex, Button, Grid, Icon, Background } from '@/once-ui/components';
 import Link from 'next/link';
 
 export default function Home() {
@@ -26,67 +25,81 @@ export default function Home() {
 	];
 
 	return (
-						<Grid
-							radius="l"
-							border="neutral-medium"
-							borderStyle="solid-1"
-							columns="repeat(3, 1fr)"
-							tabletColumns="1col"
-							mobileColumns="1col"
-							fillWidth>
-							{links.map((link) => (
-								<Link
-									target="_blank"
-									style={{ padding: 'var(--responsive-space-l)' }}
-									key={link.href}
-									href={link.href}>
+		<Flex fillWidth direction="column" alignItems="center">
+			{/* Main Content Wrapper */}
+			<Flex 
+				fillWidth 
+				maxWidth={64} 
+				direction="column" 
+				paddingX="l" 
+				paddingY="xl" 
+				gap="xl">
+				
+				<Flex direction="column" gap="m">
+					<Heading variant="display-strong-s">Contact & Links</Heading>
+					<Grid
+						radius="l"
+						border="neutral-medium"
+						borderStyle="solid-1"
+						columns="repeat(3, 1fr)"
+						tabletColumns="1col"
+						mobileColumns="1col"
+						fillWidth>
+						{links.map((link) => (
+							<Link
+								target="_blank"
+								style={{ padding: 'var(--responsive-space-l)' }}
+								key={link.href}
+								href={link.href}>
+								<Flex
+									fillWidth paddingY="8" gap="8"
+									direction="column">
 									<Flex
-										fillWidth paddingY="8" gap="8"
-										direction="column">
-										<Flex
-											fillWidth gap="12"
-											alignItems="center">
-											<Text
-												variant="body-strong-m" onBackground="neutral-strong">
-												{link.title}
-											</Text>
-											<Icon size="s" name="arrowUpRight" />
-										</Flex>
+										fillWidth gap="12"
+										alignItems="center">
 										<Text
-											variant="body-default-s" onBackground="neutral-weak">
-											{link.description}
+											variant="body-strong-m" onBackground="neutral-strong">
+											{link.title}
 										</Text>
+										<Icon size="s" name="arrowUpRight" />
 									</Flex>
-								</Link>
-							))}
-						</Grid>
-					</Flex>
+									<Text
+										variant="body-default-s" onBackground="neutral-weak">
+										{link.description}
+									</Text>
+								</Flex>
+							</Link>
+						))}
+					</Grid>
 				</Flex>
+
+				{/* Footer Section */}
 				<Flex
 					as="footer"
 					position="relative"
-					fillWidth paddingX="l" paddingY="m"
-					justifyContent="space-between">
+					fillWidth 
+					paddingY="m"
+					justifyContent="space-between"
+					alignItems="center">
 					<Text
 						variant="body-default-s" onBackground="neutral-weak">
-						© 2026 KON, <Link href="https://raw.githubusercontent.com/SasukeGh/once-ui-design-for-nextjs/refs/heads/main/LICENSE">MIT License</Link>
+						© 2026 KON, <Link href="https://github.com/SasukeGh">MIT License</Link>
 					</Text>
-					<Flex
-						gap="12">
+					<Flex gap="12">
+						<Button
+							href="/projects"
+							prefixIcon="grid" size="s" variant="secondary">
+							Projects
+						</Button>
 						<Button
 							href="https://github.com/SasukeGh"
 							prefixIcon="github" size="s" variant="tertiary">
 							GitHub
 						</Button>
-						<Button
-							href="https://snapchat.com/add/tybw.kon"
-							prefixIcon="discord" size="s" variant="tertiary">
-							Snapchat
-						</Button>
 					</Flex>
 				</Flex>
 			</Flex>
-			<Analytics /> {/* This line ensures the Analytics component is included */}
-		</React.Fragment>
+			<Analytics />
+		</Flex>
 	);
 }
