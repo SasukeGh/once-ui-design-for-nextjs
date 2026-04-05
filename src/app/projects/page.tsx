@@ -9,16 +9,16 @@ export default function Projects() {
 	const links = [
 		{
 			href: "https://conectar-v2.vercel.app",
-			title: "COnectar Restaurant",
-			description: "Restaurant site.",
+			title: "Conectar Restaurant",
+			description: "Responsive and well designed restaurant site.",
 		},
 		{
 			href: "https://github.com/NatsukiSubaruGh/anirip",
 			title: "Anirip",
-			description: "Anime downloading app for PC.",
+			description: "Simple and efficient anime downloading app for PC.",
 		},
 		{
-			href: "mailto:doktakobby@gmail.com", // Changed to mailto for functional email
+			href: "", // Empty href for the button that does nothing
 			title: "Email",
 			description: "For professional inquiries.",
 		},
@@ -28,9 +28,9 @@ export default function Projects() {
 		<React.Fragment>
 			<Flex
 				fillWidth paddingTop="l" paddingX="l"
-				direction="column" alignItems="center" flex={1} minHeight="100vh">
+				direction="column" alignItems="center" flex={1}
+				style={{ minHeight: '100vh' }}> {/* Fixed the Build Error here */}
 				
-				{/* The Background component with original settings */}
 				<Background
 					dots={false}
 					gradient={true} />
@@ -59,39 +59,48 @@ export default function Projects() {
 							{links.map((link) => {
 								const isEmail = link.title === "Email";
 								
-								/* Common inner content for both Link and regular Flex */
-								const innerContent = (
-									<Flex
-										fillWidth padding="l" gap="8"
-										direction="column">
-										<Flex
-											fillWidth gap="12"
-											alignItems="center">
-											<Text
-												variant="body-strong-m" onBackground="neutral-strong">
-												{link.title}
-											</Text>
-											{!isEmail && <Icon size="s" name="arrowUpRight" />}
-										</Flex>
-										<Text
-											variant="body-default-s" onBackground="neutral-weak">
-											{link.description}
-										</Text>
-									</Flex>
-								);
+								if (isEmail) {
+									return (
+										<Button
+											key={link.title}
+											variant="tertiary"
+											style={{ 
+												height: 'auto', 
+												justifyContent: 'flex-start', 
+												textAlign: 'left',
+												padding: 'var(--responsive-space-l)' 
+											}}
+											href=""
+											onClick={(e) => e.preventDefault()}> {/* Does nothing */}
+											<Flex direction="column" gap="8">
+												<Text variant="body-strong-m" onBackground="neutral-strong">
+													{link.title}
+												</Text>
+												<Text variant="body-default-s" onBackground="neutral-weak">
+													{link.description}
+												</Text>
+											</Flex>
+										</Button>
+									);
+								}
 
-								return isEmail ? (
-									/* Email as a regular non-link Button/Card */
-									<Flex key={link.title} fillWidth>
-										{innerContent}
-									</Flex>
-								) : (
-									/* Regular Links */
+								return (
 									<Link
 										target="_blank"
 										key={link.href}
-										href={link.href}>
-										{innerContent}
+										href={link.href}
+										style={{ padding: 'var(--responsive-space-l)' }}>
+										<Flex fillWidth paddingY="8" gap="8" direction="column">
+											<Flex fillWidth gap="12" alignItems="center">
+												<Text variant="body-strong-m" onBackground="neutral-strong">
+													{link.title}
+												</Text>
+												<Icon size="s" name="arrowUpRight" />
+											</Flex>
+											<Text variant="body-default-s" onBackground="neutral-weak">
+												{link.description}
+											</Text>
+										</Flex>
 									</Link>
 								);
 							})}
@@ -99,26 +108,20 @@ export default function Projects() {
 					</Flex>
 				</Flex>
 
-				{/* Footer */}
 				<Flex
 					as="footer"
 					position="relative"
 					fillWidth paddingX="l" paddingY="m"
 					justifyContent="space-between"
-					marginTop="auto">
-					<Text
-						variant="body-default-s" onBackground="neutral-weak">
+					style={{ marginTop: 'auto' }}>
+					<Text variant="body-default-s" onBackground="neutral-weak">
 						© 2026 KON, <Link href="https://github.com/SasukeGh">MIT License</Link>
 					</Text>
 					<Flex gap="12">
-						<Button
-							href="/"
-							prefixIcon="home" size="s" variant="secondary">
+						<Button href="/" prefixIcon="home" size="s" variant="secondary">
 							Go Home
 						</Button>
-						<Button
-							href="https://github.com/SasukeGh"
-							prefixIcon="github" size="s" variant="tertiary">
+						<Button href="https://github.com/SasukeGh" prefixIcon="github" size="s" variant="tertiary">
 							GitHub
 						</Button>
 					</Flex>
