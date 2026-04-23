@@ -38,9 +38,9 @@ export default function Projects() {
 				fillWidth
 				direction="column"
 				padding="l"
-				style={{ minHeight: "100vh" }}
+				style={{ minHeight: "100vh", zIndex: 1, position: "relative" }}
 			>
-				<Background dots={false} />
+			<Background dots={false} style={{ position: "absolute", inset: 0, zIndex: 0 }} />
 
 				<Flex flex={1} alignItems="center" justifyContent="center">
 					<Grid
