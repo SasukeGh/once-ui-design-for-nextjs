@@ -68,7 +68,7 @@ export default function Home() {
 									Kwabena Osei-Nketiah.<br />Web and mobile dev.
 								</Heading>
 								<Button 
-									href="https://conectar-v2.vercel.app"
+									href="/projects"
 									suffixIcon="chevronRight"
 									variant="secondary">
 									My Projects
