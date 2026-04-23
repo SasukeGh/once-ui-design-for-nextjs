@@ -28,75 +28,99 @@ export default function Projects() {
 		<React.Fragment>
 			<Flex
 				fillWidth
-				fillHeight
 				padding="l"
-				alignItems="center"
-				justifyContent="center"
-				style={{ minHeight: '100vh' }}
+				direction="column"
+				style={{ minHeight: "100vh" }}
 			>
 				<Background dots={false} />
 
-				<Grid
-					radius="l"
-					border="neutral-medium"
-					borderStyle="solid-1"
-					columns="repeat(3, 1fr)"
-					tabletColumns="1col"
-					mobileColumns="1col"
-					fillWidth
-				>
-					{links.map((link) => {
-						const isEmpty = !link.href;
+				{/* MAIN GRID (fills remaining space) */}
+				<Flex flex={1} alignItems="center" justifyContent="center">
+					<Grid
+						radius="l"
+						border="neutral-medium"
+						borderStyle="solid-1"
+						columns="repeat(3, 1fr)"
+						tabletColumns="1col"
+						mobileColumns="1col"
+						fillWidth
+					>
+						{links.map((link) => {
+							const isEmpty = !link.href;
 
-						if (isEmpty) {
+							if (isEmpty) {
+								return (
+									<Button
+										key={link.title}
+										variant="tertiary"
+										style={{
+											height: "100%",
+											justifyContent: "flex-start",
+											textAlign: "left",
+											padding: "var(--responsive-space-l)",
+										}}
+										onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+											e.preventDefault()
+										}
+									>
+										<Flex direction="column" gap="8">
+											<Text variant="body-strong-m" onBackground="neutral-strong">
+												{link.title}
+											</Text>
+											<Text variant="body-default-s" onBackground="neutral-weak">
+												{link.description}
+											</Text>
+										</Flex>
+									</Button>
+								);
+							}
+
 							return (
-								<Button
-									key={link.title}
-									variant="tertiary"
-									style={{
-										height: '100%',
-										justifyContent: 'flex-start',
-										textAlign: 'left',
-										padding: 'var(--responsive-space-l)',
-									}}
-									onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-										e.preventDefault()
-									}
+								<Link
+									target="_blank"
+									key={link.href}
+									href={link.href}
+									style={{ padding: "var(--responsive-space-l)" }}
 								>
-									<Flex direction="column" gap="8">
-										<Text variant="body-strong-m" onBackground="neutral-strong">
-											{link.title}
-										</Text>
+									<Flex fillWidth paddingY="8" gap="8" direction="column">
+										<Flex fillWidth gap="12" alignItems="center">
+											<Text variant="body-strong-m" onBackground="neutral-strong">
+												{link.title}
+											</Text>
+											<Icon size="s" name="arrowUpRight" />
+										</Flex>
 										<Text variant="body-default-s" onBackground="neutral-weak">
 											{link.description}
 										</Text>
 									</Flex>
-								</Button>
+								</Link>
 							);
-						}
+						})}
+					</Grid>
+				</Flex>
 
-						return (
-							<Link
-								target="_blank"
-								key={link.href}
-								href={link.href}
-								style={{ padding: 'var(--responsive-space-l)' }}
-							>
-								<Flex fillWidth paddingY="8" gap="8" direction="column">
-									<Flex fillWidth gap="12" alignItems="center">
-										<Text variant="body-strong-m" onBackground="neutral-strong">
-											{link.title}
-										</Text>
-										<Icon size="s" name="arrowUpRight" />
-									</Flex>
-									<Text variant="body-default-s" onBackground="neutral-weak">
-										{link.description}
-									</Text>
-								</Flex>
-							</Link>
-						);
-					})}
-				</Grid>
+				{/* FOOTER (now visible and pinned) */}
+				<Flex
+					as="footer"
+					fillWidth
+					paddingY="m"
+					justifyContent="space-between"
+					style={{ marginTop: "auto" }}
+				>
+					<Text variant="body-default-s" onBackground="neutral-weak">
+						© 2026 KON,{" "}
+						<Link href="https://github.com/SasukeGh">MIT License</Link>
+					</Text>
+
+					<Flex gap="12">
+						<Button href="/" prefixIcon="home" size="s" variant="secondary">
+							Home
+						</Button>
+						<Button href="https://github.com/SasukeGh" prefixIcon="github" size="s" variant="tertiary">
+							GitHub
+						</Button>
+					</Flex>
+				</Flex>
 			</Flex>
 
 			<Analytics />
