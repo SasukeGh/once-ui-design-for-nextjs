@@ -117,7 +117,7 @@ export default function Home() {
 					justifyContent="space-between">
 					<Text
 						variant="body-default-s" onBackground="neutral-weak">
-						{currentYear} KON,{" "}, <Link href="https://raw.githubusercontent.com/SasukeGh/once-ui-design-for-nextjs/refs/heads/main/LICENSE">MIT License</Link>
+						© {currentYear} KON ,<Link href="https://raw.githubusercontent.com/SasukeGh/once-ui-design-for-nextjs/refs/heads/main/LICENSE">MIT License</Link>
 					</Text>
 					<Flex
 						gap="12">
