@@ -64,7 +64,7 @@ export default function Home() {
 								</InlineCode>
 								<Heading
 									variant="display-strong-s">
-									Kwabena Osei-Nketiah.<br />Contact me for any projects.
+									Kwabena Osei-Nketiah.<br />Web and mobile dev.
 								</Heading>
 								<Button 
 									href="https://conectar-v2.vercel.app"
@@ -117,7 +117,7 @@ export default function Home() {
 					justifyContent="space-between">
 					<Text
 						variant="body-default-s" onBackground="neutral-weak">
-						© 2026 KON, <Link href="https://raw.githubusercontent.com/SasukeGh/once-ui-design-for-nextjs/refs/heads/main/LICENSE">MIT License</Link>
+						{currentYear} KON,{" "}, <Link href="https://raw.githubusercontent.com/SasukeGh/once-ui-design-for-nextjs/refs/heads/main/LICENSE">MIT License</Link>
 					</Text>
 					<Flex
 						gap="12">
