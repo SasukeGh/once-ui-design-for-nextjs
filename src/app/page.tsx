@@ -70,7 +70,7 @@ export default function Home() {
 									href="https://conectar-v2.vercel.app"
 									suffixIcon="chevronRight"
 									variant="secondary">
-									My First Main Project
+									My Projects
 								</Button>
 							</Flex>
 						</Flex>
