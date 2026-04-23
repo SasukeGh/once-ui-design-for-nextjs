@@ -111,7 +111,7 @@ export default function Projects() {
 												textAlign: 'left',
 												padding: 'var(--responsive-space-l)'
 											}}
-											onClick={(e) => e.preventDefault()}
+											onClick={(e: React.MouseEvent<HTMLButtonElement>) => e.preventDefault()}
 										>
 											<Flex direction="column" gap="8">
 												<Text variant="body-strong-m" onBackground="neutral-strong">
