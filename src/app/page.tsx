@@ -64,7 +64,7 @@ export default function Home() {
 								</InlineCode>
 								<Heading
 									variant="display-strong-s">
-									Kwabena Osei-Nketiah.<br />Web and mobile developer.<br /><br />Contact me for any projects.
+									Kwabena Osei-Nketiah.<br />Contact me for any projects.
 								</Heading>
 								<Button 
 									href="https://conectar-v2.vercel.app"
