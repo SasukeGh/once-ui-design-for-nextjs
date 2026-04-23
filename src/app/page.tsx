@@ -7,6 +7,7 @@ import { Heading, Text, Flex, Button, Grid, InlineCode, Icon, Logo, Background }
 import Link from 'next/link';
 
 export default function Home() {
+ const currentYear = new Date().getFullYear();
 	const links = [
 		{
 			href: "https://wa.me/233257789272/?text=Hi",
