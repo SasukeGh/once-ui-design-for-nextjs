@@ -5,8 +5,16 @@ import React from 'react';
 import { Text, Flex, Button, Grid, Icon, Background } from '@/once-ui/components';
 import Link from 'next/link';
 
+type Project = {
+	href: string | null;
+	title: string;
+	description: string;
+};
+
 export default function Projects() {
-	const links = [
+	const currentYear = new Date().getFullYear();
+
+	const links: Project[] = [
 		{
 			href: "https://conectar-v2.vercel.app",
 			title: "Conectar Restaurant",
@@ -18,7 +26,7 @@ export default function Projects() {
 			description: "Simple and efficient anime downloading app for PC.",
 		},
 		{
-			href: "",
+			href: null,
 			title: "More Coming",
 			description: "New projects will be added soon.",
 		},
@@ -28,87 +36,93 @@ export default function Projects() {
 		<React.Fragment>
 			<Flex
 				fillWidth
-				padding="l"
 				direction="column"
+				padding="l"
 				style={{ minHeight: "100vh" }}
 			>
 				<Background dots={false} />
 
-				{/* MAIN GRID (fills remaining space) */}
 				<Flex flex={1} alignItems="center" justifyContent="center">
 					<Grid
+						fillWidth
 						radius="l"
 						border="neutral-medium"
 						borderStyle="solid-1"
 						columns="repeat(3, 1fr)"
 						tabletColumns="1col"
 						mobileColumns="1col"
-						fillWidth
 					>
 						{links.map((link) => {
-							const isEmpty = !link.href;
+							const cardStyle: React.CSSProperties = {
+								padding: "var(--responsive-space-l)",
+								minHeight: "180px",
+								display: "flex",
+								alignItems: "stretch",
+							};
 
-							if (isEmpty) {
+							if (link.href) {
 								return (
-									<Button
+									<Link
 										key={link.title}
-										variant="tertiary"
-										style={{
-											height: "100%",
-											justifyContent: "flex-start",
-											textAlign: "left",
-											padding: "var(--responsive-space-l)",
-										}}
-										onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-											e.preventDefault()
-										}
+										href={link.href}
+										target="_blank"
+										rel="noopener noreferrer"
+										style={{ textDecoration: "none" }}
 									>
-										<Flex direction="column" gap="8">
-											<Text variant="body-strong-m" onBackground="neutral-strong">
-												{link.title}
-											</Text>
-											<Text variant="body-default-s" onBackground="neutral-weak">
-												{link.description}
-											</Text>
+										<Flex
+											fillWidth
+											direction="column"
+											justifyContent="space-between"
+											style={cardStyle}
+										>
+											<Flex direction="column" gap="8">
+												<Flex gap="12" alignItems="center">
+													<Text variant="body-strong-m" onBackground="neutral-strong">
+														{link.title}
+													</Text>
+													<Icon size="s" name="arrowUpRight" />
+												</Flex>
+												<Text variant="body-default-s" onBackground="neutral-weak">
+													{link.description}
+												</Text>
+											</Flex>
 										</Flex>
-									</Button>
+									</Link>
 								);
 							}
 
 							return (
-								<Link
-									target="_blank"
-									key={link.href}
-									href={link.href}
-									style={{ padding: "var(--responsive-space-l)" }}
+								<Flex
+									key={link.title}
+									fillWidth
+									direction="column"
+									justifyContent="space-between"
+									style={cardStyle}
 								>
-									<Flex fillWidth paddingY="8" gap="8" direction="column">
-										<Flex fillWidth gap="12" alignItems="center">
-											<Text variant="body-strong-m" onBackground="neutral-strong">
-												{link.title}
-											</Text>
-											<Icon size="s" name="arrowUpRight" />
-										</Flex>
+									<Flex direction="column" gap="8">
+										<Text variant="body-strong-m" onBackground="neutral-strong">
+											{link.title}
+										</Text>
 										<Text variant="body-default-s" onBackground="neutral-weak">
 											{link.description}
 										</Text>
 									</Flex>
-								</Link>
+								</Flex>
 							);
 						})}
 					</Grid>
 				</Flex>
 
-				{/* FOOTER (now visible and pinned) */}
 				<Flex
 					as="footer"
 					fillWidth
 					paddingY="m"
 					justifyContent="space-between"
+					alignItems="center"
 					style={{ marginTop: "auto" }}
 				>
 					<Text variant="body-default-s" onBackground="neutral-weak">
-						© 2026 KON,{" "}
+						© {currentYear} KON,{" "}
 						<Link href="https://github.com/SasukeGh">MIT License</Link>
 					</Text>
 
@@ -116,7 +130,12 @@ export default function Projects() {
 						<Button href="/" prefixIcon="home" size="s" variant="secondary">
 							Home
 						</Button>
-						<Button href="https://github.com/SasukeGh" prefixIcon="github" size="s" variant="tertiary">
+						<Button
+							href="https://github.com/SasukeGh"
+							prefixIcon="github"
+							size="s"
+							variant="tertiary"
+						>
 							GitHub
 						</Button>
 					</Flex>
