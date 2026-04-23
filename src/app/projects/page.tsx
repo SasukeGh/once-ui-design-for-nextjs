@@ -40,7 +40,15 @@ export default function Projects() {
 				padding="l"
 				style={{ minHeight: "100vh", zIndex: 1, position: "relative" }}
 			>
-			<Background dots={false} style={{ position: "absolute", inset: 0, zIndex: 0 }} />
+			<Background
+	dots={false}
+	style={{
+		position: "fixed",
+		inset: 0,
+		zIndex: -1,
+		pointerEvents: "none",
+	}}
+/>
 
 				<Flex flex={1} alignItems="center" justifyContent="center">
 					<Grid
